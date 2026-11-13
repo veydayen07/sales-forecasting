@@ -79,6 +79,7 @@ export function downloadForecastCsvClient(predictions) {
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
+  setTimeout(() => URL.revokeObjectURL(url), 2500)
 }
 
 export function formatCurrency(value) {

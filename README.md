@@ -9,6 +9,7 @@ Aplikasi dibangun sesuai dengan Product Requirement Document (PRD) menggunakan *
 ## 🌟 Fitur Utama
 
 ### 1. Dashboard
+
 - **Ringkasan KPI Utama**:
   - Total penjualan historis akumulatif
   - Rata-rata penjualan harian
@@ -18,23 +19,26 @@ Aplikasi dibangun sesuai dengan Product Requirement Document (PRD) menggunakan *
   - Grafik gabungan tren historis aktual yang tersambung langsung dengan proyeksi model 30 hari ke depan.
 
 ### 2. Historical Sales
+
 - **Grafik Interaktif Chart.js**: Visualisasi fluktuasi penjualan harian.
 - **Filter Fleksibel**:
-  - Filter preset cepat: *30 Hari*, *90 Hari*, *180 Hari*, *1 Tahun*, dan *Semua Data*.
-  - Pemilihan rentang tanggal kustom (*Start Date* s/d *End Date*).
+  - Filter preset cepat: _30 Hari_, _90 Hari_, _180 Hari_, _1 Tahun_, dan _Semua Data_.
+  - Pemilihan rentang tanggal kustom (_Start Date_ s/d _End Date_).
 - **Tabel Data Historis**: Dilengkapi fitur pencarian tanggal/hari, indikator status deviasi penjualan harian terhadap rata-rata, dan paginasi.
 
 ### 3. Sales Forecasting
+
 - **Inferensi Rekursif**: Tombol **Generate Forecast** untuk mengeksekusi model Random Forest (`rf_sales_forecast.joblib`) secara rekursif berbasis lag dan rolling features.
 - **Grafik Prediksi 30 Hari**: Visualisasi proyeksi harian dengan highlight hari kerja dan akhir pekan.
-- **Tabel Hasil Prediksi**: Rincian hari ke-1 s/d hari ke-30, tanggal, hari, estimasi penjualan, dan perubahan *Day-over-Day* (%).
+- **Tabel Hasil Prediksi**: Rincian hari ke-1 s/d hari ke-30, tanggal, hari, estimasi penjualan, dan perubahan _Day-over-Day_ (%).
 - **Ekspor Data**: Tombol **Download CSV** untuk mengunduh hasil prediksi langsung ke komputer.
 
 ### 4. Model Evaluation
+
 - **Metrik Performa Model**:
-  - **MAE** (*Mean Absolute Error*): `57,075.73`
-  - **RMSE** (*Root Mean Squared Error*): `79,545.34`
-  - **WAPE** (*Weighted Absolute Percentage Error*): `6.85%` (Akurasi > 93%)
+  - **MAE** (_Mean Absolute Error_): `57,075.73`
+  - **RMSE** (_Root Mean Squared Error_): `79,545.34`
+  - **WAPE** (_Weighted Absolute Percentage Error_): `6.85%` (Akurasi > 93%)
 - **Benchmark vs Baseline**: Perbandingan visual diagram batang (Bar Chart) dan tabel terhadap model Baseline (7 hari terakhir).
 - **Panduan Operasional**: Penjelasan makna setiap metrik bagi pemilik toko dan tim perencana stok inventaris.
 
@@ -42,17 +46,17 @@ Aplikasi dibangun sesuai dengan Product Requirement Document (PRD) menggunakan *
 
 ## 🛠️ Tech Stack
 
-| Komponen | Teknologi |
-|---|---|
-| **Frontend Framework** | Vue.js 3 (Composition API) |
-| **Build Tool** | Vite |
-| **CSS & Styling** | Tailwind CSS v4 |
-| **Data Visualization** | Chart.js |
-| **Icons** | Lucide Icons (`lucide-vue-next`) |
-| **Backend Framework** | Python FastAPI & Uvicorn |
-| **Machine Learning** | Scikit-learn (Random Forest Regressor) |
-| **Model Persistence** | Joblib (`rf_sales_forecast.joblib`) |
-| **Data Processing** | Pandas, NumPy |
+| Komponen               | Teknologi                              |
+| ---------------------- | -------------------------------------- |
+| **Frontend Framework** | Vue.js 3 (Composition API)             |
+| **Build Tool**         | Vite                                   |
+| **CSS & Styling**      | Tailwind CSS v4                        |
+| **Data Visualization** | Chart.js                               |
+| **Icons**              | Lucide Icons (`lucide-vue-next`)       |
+| **Backend Framework**  | Python FastAPI & Uvicorn               |
+| **Machine Learning**   | Scikit-learn (Random Forest Regressor) |
+| **Model Persistence**  | Joblib (`rf_sales_forecast.joblib`)    |
+| **Data Processing**    | Pandas, NumPy                          |
 
 ---
 
@@ -71,6 +75,7 @@ Aktifkan virtual environment dan jalankan server FastAPI:
 ```bash
 # Windows
 .venv\Scripts\activate
+python -m pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
@@ -90,6 +95,7 @@ cd sales-forecasting/frontend/sales-forecasting-fe
 Jalankan Vite dev server:
 
 ```bash
+npm install
 npm run dev
 ```
 
